@@ -1,0 +1,155 @@
+// Variables
+$brand-color: #FF9000;
+$accent-color: #e74c3c;
+
+$text-color: #444;
+$text-pale-color: #888;
+$text-light-color: #666666;
+
+$link-color: #e74c3c;
+$link-hover-color: #333;
+
+$bg-color: #fff;
+$reverse-color: $bg-color;
+$secondary-bg-color: #fafafa;
+$border-color: #ddd;
+$border-darken-color: #aaa;
+$color-gray80: #ccc;
+
+$footer-text-color: #ccc;
+$footer-bg: #444;
+
+$base-font-family: Arial, Helvetica, sans-serif;
+$helvetica-font-family: Helvetica, Arial;
+$open-sans: 'Open Sans', $base-font-family;
+$base-font-size: 14px;
+$font-size-bigger: 16px;
+$base-line-height: 1.42857143;
+
+$container-width: 990px;
+
+$bold: 700;
+$semi-bold: 600;
+
+$min-width: 320px;
+
+$z-index-header: 300;
+
+$compact-mode-breakpoint: 820px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 990px;
+
+$transition-time: .4s;
+$border-radius: 3px;
+$border-radius-max: 50%;
+
+// Form elements
+$form-control-height: 32px;
+$form-label-color: #3d3d3d;
+$form-control-padding: 5px 10px;
+$form-active-el-shadow: 0 0 3px 1px hsla(0,0%,67%,.5);
+
+// Mixins and placeholders
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%container {
+  @include clearfix();
+  min-width: $min-width;
+  max-width: $container-width;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clear-outline() {
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
+  &::-moz-focus-inner {
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+@mixin list-unstyled() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button() {
+  @include clear-outline();
+  padding: 11px 20px 10px;
+  display: inline-block;
+  vertical-align: middle;
+  color: $text-color;
+  border: 1px solid $border-color;
+  font-size: $base-font-size;
+  font-weight: $bold;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: border .15s;
+  border-radius: $border-radius;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.is-rounded {
+    padding-left: 34px;
+    padding-right: 34px;
+    border-radius: 50px;
+  }
+
+  &.is-disabled {
+    opacity: .5;
+    cursor: default;
+  }
+}
+
+// _normalise.scss
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  line-height: $base-line-height;
+  font-size: $base-font-size;
+  color: $text-color;
+  font-family: $base-font-family;
+  background: $bg-color;
+  position: relative;
+}
+
+// Masterclasses
+  // Typography

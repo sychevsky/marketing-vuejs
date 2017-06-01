@@ -1,0 +1,201 @@
+// Typography
+h1, h2, h3, h4 {
+  color: $text-color;
+  //font: bold $base-font-size $base-font-family;
+  line-height: 1.1;
+}
+
+.content-title {
+  color: $accent-color;
+  font-size: 23px;
+  font-weight: $bold;
+  margin-bottom: 25px;
+}
+
+.sidebar-title {
+  color: #5d5d5d;
+  font-size: 19px;
+  font-family: $helvetica-font-family;
+  margin-bottom: 21px;
+}
+
+// Scaffolding
+body {
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  line-height: $base-line-height;
+  background: $bg-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Buttons
+.btn-primary {
+  @include button();
+  color: $reverse-color;
+  border-color: $brand-color;
+  background-image: linear-gradient(#ffa300 0%, #ff7700 100%);
+  &:hover,
+  &:focus {
+    background: #ff9e21;
+  }
+
+  &:active {
+    background: $brand-color;
+    background-image: linear-gradient(0deg, #ffa300 0%, #ff7700 100%);
+  }
+
+  &:focus {
+    border-color: #ff7700;
+    box-shadow: 0 0 5px 1px rgba(255, 119, 0, 0.51);
+  }
+
+  &.is-disabled {
+    &:hover,
+    &:focus,
+    &:active {
+      background: #ff9e21;
+      background-image: linear-gradient(#ffa300 0%, #ff7700 100%);
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-secondary {
+  @include button();
+  border-color: #bbb;
+  background: #f2f2f2;
+  background-image: linear-gradient(#f5f5f5 0%, #ececec 100%);
+  &:hover,
+  &:focus {
+    background: #f4f4f4;
+  }
+
+  &:focus {
+    border-color: #bbb;
+    box-shadow: 0 0 5px 1px rgba(187, 187, 187, 0.50);
+  }
+
+  &:active {
+    background: #eaeaea;
+    background-image: linear-gradient(0deg, #f5f5f5 0%, #ececec 100%);
+  }
+
+  &.is-disabled {
+    opacity: .6;
+    &:hover,
+    &:focus,
+    &:active {
+      background: #f4f4f4;
+      background-image: linear-gradient(#f5f5f5 0%, #ececec 100%);
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-classic {
+  @include button();
+  padding: 13px 20px 14px;
+  font-size: $font-size-bigger;
+  color: #552902;
+  border: 1px solid #ec7a12;
+  background: linear-gradient(to bottom, #ffba5f 31%, #ff8f2b 100%);
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+}
+
+// Form elements
+.form-label {
+  font-size: $base-font-size;
+  font-weight: $bold;
+  color: $form-label-color;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: $form-control-padding;
+  height: $form-control-height;
+  font-size: $base-font-size;
+  line-height: 20px;
+  border: 1px solid $border-color;
+  background: $bg-color;
+  box-shadow: inset 1px 1px 1px 0 rgba(0,1,1,.07);
+  transition: border-color .15s ease-in-out;
+  border-radius: $border-radius;
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+    border-color: $border-darken-color;
+    box-shadow: $form-active-el-shadow;
+  }
+
+  .vf-field-invalid & {
+    //border-color: $accent-color;
+  }
+}
+
+.vf-form-submitted .vf-field-invalid {
+  .form-control:focus,
+  .form-control.has-error-required:focus {
+    border-color: $accent-color;
+  }
+}
+
+.form-item {
+  display: inline-block;
+
+}
+
+.checkbox {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $border-color;
+  cursor: pointer;
+}
+
+.checkbox.disabled {
+  cursor: default;
+}
+
+.checkbox.active {
+  border: 1px solid $brand-color;
+}
+
+.vf-field-dirty {
+  display: inline-block;
+}
+
+.vf-field-pristine {
+  display: inline-block;
+}
+
+// Sticky Footer
+#app {
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&subset=cyrillic');
